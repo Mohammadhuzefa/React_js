@@ -1,16 +1,18 @@
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, useNavigate } from "react-router-dom"
 import { CiSearch } from "react-icons/ci";
 import { BiUser } from "react-icons/bi";
 import { PiShoppingCart } from "react-icons/pi";
 import PillNav from './PillNav';
 // import logo from '/path/to/logo.svg';
 
+
 function Layout(){
+  const navigate = useNavigate();
     return(
         <>
         <nav className="md:flex  gap-8 text-sm justify-between items-center">
             <h1 className="bg-black"><img src="https://myop.in/cdn/shop/files/MYOP_LOGO_All_1_.pngwhite_a18792dd-27a0-43a6-96b7-f7999b442e1d.png?v=1709801788&width=260" alt="" /></h1>
-            <ul className="flex gap-8">
+            {/* <ul className="flex gap-8">
                 
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/SIGNATURE PERFUME">SIGNATURE PERFUME</Link></li>
@@ -21,8 +23,9 @@ function Layout(){
 
                 
 
-            </ul>
-            {/* <ul className="flex gap-4 items-center">
+            </ul> */}
+
+             <ul className="flex gap-4 items-center ">
 
             
 
@@ -32,9 +35,10 @@ function Layout(){
               logoAlt="Company Logo"
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'About', href: '/about' },
-                { label: 'Services', href: '/services' },
-                { label: 'Contact', href: '/contact' }
+                { label: 'SIGNATURE PERFUME', href: '/Signature_Perfume' },
+                { label: 'PERSONALIZED PERFUME', href: '/CustomizeBottle' },
+                { label: 'COSMOPOLITAN', href: '/contact' },
+                { label: 'ACCESSORIES', href: '/contact' }
               ]}
               activeHref="/"
               className="custom-nav"
@@ -49,13 +53,19 @@ function Layout(){
 
               />
               
-              </ul> */}
+              </ul>
 
 
             <div className="flex gap-8">
 
             <CiSearch className="text-2xl" />
-            <BiUser className="text-2xl"/>
+
+            {/* <BiUser className="text-2xl"  onClick={()=>navigate('/login')} /> */}
+              <button>
+
+            <BiUser className="text-2xl" onClick={() => navigate("/auth")}/>
+              </button>
+              
             <PiShoppingCart className="text-2xl"/>
 
             </div>

@@ -249,7 +249,7 @@ const PillNav = ({
             }}
           >
             <img src={logo} alt={logoAlt} ref={logoImgRef} />
-          </a>
+          // </a>
         )}
 
         <div className="pill-nav-items desktop-only" ref={navItemsRef}>
